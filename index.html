@@ -4,18 +4,35 @@
     <head>
         <style>
             body{
-                margin: 3% 15% 0 15%;
+                margin: 3% 15% 15% 15%;
                 background-color: lightgray;
             }
+            body p{
+                font-size: smaller;
+            }
+            body span{
+                font-size: smaller;
+            }
+            body td{
+                font-size: smaller;
+            }
+            body table{
+                padding-left: 40px;
+            }
             .Paper{
+                max-width: 1024px;
                 background-color: whitesmoke;
-                padding: 2% 5% 5% 5%;
+                padding: 2% 10% 5% 10%;
             }
             .PersonalData{
                 width:max-content;
                 margin: auto;
                 box-align: center;
                 text-align: center;
+                padding-bottom:2em;
+            }
+            .PersonalData p{
+                margin: 0px;
             }
             .Header{
                 text-align: center;
@@ -29,7 +46,11 @@
             .ProfessionalExp ul li{
                 margin-bottom: 1em;
             }
-
+            
+            .img_icon{
+                height: 16px;
+                margin-bottom: -0.2em;
+            } 
         </style>
         <meta charset="UTF-8">
         <title>Currículo</title>
@@ -38,19 +59,25 @@
   
     <body style="font-family:Montserrat,sans-serif">
   
-    <header class="Header">
-        <h1 style="font-size: 3em" > Currículum </h1>
-    </header>
+    
     <div class="Paper">
 
-        
+        <header class="Header">
+            <h1 style="font-size: 3em" > Currículum </h1>
+        </header>
         
         <div id="nome-foto" class="PersonalData">
             <h2>Dados Pessoais</h2>
             <p>Márcio Antônio de Freitas Júnior</p>
-            <p>Brasileiro - 20 anos - Solteiro Uberlândia · Minas Gerais</p>
-            <p>Rua Euclides Ferreira Tavares- JD Califórnia</p>
-            <p>marcio55afr@gmail.com	34 99862-2909</p>
+            <p>Brasileiro - 20 anos - Solteiro</p>
+            <p>Uberlândia · Minas Gerais</p>
+            <p>Rua Euclides Ferreira Tavares - JD Califórnia</p>
+            <span>
+                <img src="http://www.urbanleagueneb.org/wp-content/uploads/2016/10/E-mail-Icon-1024x1024.png" class="img_icon">
+                marcio55afr@gmail.com
+                <img src="http://www.urbanleagueneb.org/wp-content/uploads/2016/10/Mobile-Phone-Icon-1024x1024.png" class="img_icon">
+                34 99862-2909
+            </span>
         </div>
 
     
