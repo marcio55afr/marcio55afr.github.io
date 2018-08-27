@@ -1,48 +1,54 @@
-	    body{
-                margin: 3% 15% 15% 15%;
-                background-color: lightgray;
-            }
-            body p{
-                font-size: smaller;
-            }
-            body span{
-                font-size: smaller;
-            }
-            body td{
-                font-size: smaller;
-            }
-            body table{
-                padding-left: 40px;
-            }
-            .Paper{
-                max-width: 1024px;
-                background-color: whitesmoke;
-                padding: 2% 10% 5% 10%;
-            }
-            .PersonalData{
-                width:max-content;
-                margin: auto;
-                box-align: center;
-                text-align: center;
-                padding-bottom:2em;
-            }
-            .PersonalData p{
-                margin: 0px;
-            }
-            .Header{
-                text-align: center;
-                background-color: darkslategray;
-                color: aliceblue;
-                padding: 3%;
-            }
-            .ProfessionalExp ul li p{
-                margin: 0px;
-            }
-            .ProfessionalExp ul li{
-                margin-bottom: 1em;
-            }
-            
-            .img_icon{
-                height: 16px;
-                margin-bottom: -0.2em;
-            } 
+	body{
+		margin: 3% 15% 15% 15%;
+		background-image: url("bg1.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	body p{
+		font-size: smaller;
+	}
+	body span{
+		font-size: smaller;
+	}
+	body td{
+		font-size: smaller;
+	}
+	body table{
+		padding-left: 40px;
+	}
+	.Paper{
+		max-width: 1024px;
+		background-color: whitesmoke;
+		padding: 2% 10% 5% 10%;
+	}
+	.PersonalData{
+		width:max-content;
+		margin: auto;
+		box-align: center;
+		text-align: center;
+		padding-bottom:2em;
+	}
+	.PersonalData p{
+		margin: 0px;
+	}
+	.Header{
+		text-align: center;
+		background-color: darkslategray;
+		color: aliceblue;
+		padding: 3%;
+		max-width: 1024px;
+	}
+	.Header h1{
+		font-size: 3em;
+	}
+	.ProfessionalExp ul li p{
+		margin: 0px;
+	}
+	.ProfessionalExp ul li{
+		margin-bottom: 1em;
+	}
+
+	.img_icon{
+		height: 16px;
+		margin-bottom: -0.2em;
+	} 
