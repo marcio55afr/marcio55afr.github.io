@@ -54,21 +54,13 @@
                         $("#"+aux).show();
                     });*/
                 });
-                
+                var img_expanded = false;
                 $("#img-perfil").click(function(){
-                    if($(this).css('width') == '56px'){
-                    console.log($(this).css('width'));
+                    if(img_expanded){
                         $(this).animate({
-                            width: '245px',
-                            height: '245px'
-                        });
-                        $(this).addClass("img-perfil-bigger");
-                    }
-                    else{
-                        console.log('eita'+$(this).css('width'));
-                        $(this).animate({
-                            width: '56px',
-                            height: '56px'
+                            width: '86px',
+                            height: '86px',
+                            borderRadius: '50%'
                         });
 
                         $(this).addClass("img-perfil-bigger");
@@ -76,6 +68,15 @@
                             $("#img-perfil").fadeIn(400).removeClass("img-perfil-bigger");
                         },400);
                     }
+                    else{
+                        $(this).animate({
+                            width: '245px',
+                            height: '245px',
+                            borderRadius: '10%'
+                        });
+                        $(this).addClass("img-perfil-bigger");
+                    }
+                    img_expanded = !img_expanded 
                 });
                 
                 $("#navButton").click(function(){
@@ -94,14 +95,16 @@
         
   
 	<header class="jumbotron jumbotron-fluid p-0 text-center bg-dark">
-        <h1 class="pt-3"><img src="images/curriculum-sm-light.png" alt="Logo">Personal Portfolio</h1>
+        <h1 class="pt-3">Portfolio</h1>
         
         <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
             <div class="margin-nav-header navbar-header">
-                <ul class="row-list mb-0 pl-0">
-                    <li class="py-0"><img src="images/Perfil.png" id="img-perfil" class="img-perfil" alt="perfil"></li>
-                    <li class="nav-item py-3 cursor-default">Márcio Antônio</li>
-                </ul>    
+                <div class="img-profile">
+                    <img src="images/Perfil.png" id="img-perfil" class="img-perfil" alt="perfil">
+                </div>
+                <div class="name-profile">
+                    Márcio Antônio
+                </div>
             </div>
             <button id="navButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#data-bar">
                 <span class="navbar-toggler-icon"></span>
@@ -127,82 +130,82 @@
         </nav>
        </header>
     
+
+    <div class="background-changer1">
+        <div class="background-changer2">
+
+        
     
-    <div id="content" class="module">
+            <div id="data" class="module p-3 PersonalData"  style="display: block;">
+                <h1>Dados Pessoais</h1>
+                <p>Márcio Antônio de Freitas Júnior</p>
+                <p>Brasileiro - 20 anos - Solteiro</p>
+                <p>Uberlândia · Minas Gerais</p>
+                <p>Rua Euclides Ferreira Tavares - JD Califórnia</p>
+                <p style="white-space:nowrap;text-align: center">
+                    <i style="color: white" class="fa fa-envelope"></i> marcio55afr@gmail.com
+                    <i class="fa fa-phone-square"></i> (34)99862-2909
+                </p>
+            </div>
 
 
-    </div>
+            
+            <div id="experience" class="module p-3 ProfessionalExp">
+                <h2>Experiência Profissional</h2>
+                <hr>
+                <ul>
+                    <li>
+                        <p>2014 - 2015: Martins Comércio e Serviços de Distribuição S/A</p>
+                        <p>Cargo: Aprendiz Profissional Comercial em Serviços Administrativos</p>
+                        <p>Principais Atividades: correção de endereços dos clientes do site eFácil, preenchimento de planilha de entregas, entre outras.</p>
+                    </li>
+                    <li>
+                        <p>2017: Escola de Educação Básica da Universidade Federal de Uberlândia (ESEBA) Cargo: Estagiário – Laboratório de Informática.</p>
+                        <p>Principais Atividades: configuração e manutenção da rede local, suporte técnico à comunidade ESEBA, configuração de computadores, entre outras.</p>
+                    </li>
+                    <li>
+                        <p>2018: Cedro Technologies</p>
+                        <p>Cargo: Estagiário em desenvolvimento web backend e front-end</p>
+                        <p>Principais Atividades: Desenvolvimento de API's utilizando a plataforma .NET, desenvolvimento de components e modais em AngularJs e correções de erros e bugs de código.</p>
+                    </li>
+                </ul>
+                
+            </div>
 
-    <div id="data" class="module p-3 PersonalData">
-        <h1>Dados Pessoais</h1>
-        <p>Márcio Antônio de Freitas Júnior</p>
-        <p>Brasileiro - 20 anos - Solteiro</p>
-        <p>Uberlândia · Minas Gerais</p>
-        <p>Rua Euclides Ferreira Tavares - JD Califórnia</p>
-        <p style="white-space:nowrap;text-align: center">
-            <i style="color: white" class="fa fa-envelope"></i> marcio55afr@gmail.com
-            <i class="fa fa-phone-square"></i> (34)99862-2909
-        </p>
-    </div>
+            <div id="formation" class="module p-3" id="formacao-academica">
+                
+                <h2>Formação Acadêmica</h2>
+                <hr>
+                <table class="table table-borderless text-light" style="width:auto; margin: 0 auto;">
+                    <tr>
+                        <td>Curso </td> <td>Ciência da Computação</td>
+                    </tr>
+                    <tr>
+                        <td>Instituição </td> <td>Universidade Federal de Uberlândia</td>
+                    </tr>
+                    <tr>
+                        <td>Término </td> <td>Dezembro de 2018</td>
+                    </tr>
+                </table>
+            </div>
 
 
-    
-    <div id="experience" class="module p-3 ProfessionalExp">
-        <h2>Experiência Profissional</h2>
-        <hr>
-        <ul>
-            <li>
-                <p>2014 - 2015: Martins Comércio e Serviços de Distribuição S/A</p>
-                <p>Cargo: Aprendiz Profissional Comercial em Serviços Administrativos</p>
-                <p>Principais Atividades: correção de endereços dos clientes do site eFácil, preenchimento de planilha de entregas, entre outras.</p>
-            </li>
-            <li>
-                <p>2017: Escola de Educação Básica da Universidade Federal de Uberlândia (ESEBA) Cargo: Estagiário – Laboratório de Informática.</p>
-                <p>Principais Atividades: configuração e manutenção da rede local, suporte técnico à comunidade ESEBA, configuração de computadores, entre outras.</p>
-            </li>
-            <li>
-                <p>2018: Cedro Technologies</p>
-                <p>Cargo: Estagiário em desenvolvimento web backend e front-end</p>
-                <p>Principais Atividades: Desenvolvimento de API's utilizando a plataforma .NET, desenvolvimento de components e modais em AngularJs e correções de erros e bugs de código.</p>
-            </li>
-        </ul>
+            <div id="qualification" class="module p-3">
+                
+                <h2>Qualificações e Atividades Complementares</h2>
+                <hr>
+                <ul>
+                    <li> <p>Inglês Intermediário;</p> </li>
+                    <li> <p>Conhecimentos básicos em HTML5, CSS, Bootstrap, JavaScript, AngularJs, Microsoft .NET, MYSQL, Git, Entity framework, JSON, programação funcional e programação lógica;</p> </li>
+                    <li> <p>Conhecimentos intermediários em JAVA, C ,Python, programação orientado a objetos e programação procedural.</p> </li>
+                    <li> <p>Ferramentas já utilizadas: Redmine, Bitbucket, Github, Visual Studio, Postman;</p> </li>
+                    <li> <p>Participação no Programa de Iniciação Científica Júnior com bolsa do CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico) - 2012 e 2014;</p> </li>
+                    <li> <p>Publicação de Artigo: Vida Artificial: do Aleatório ao Específico, 2017, 4a edição TechWeek FACOM / UFU. Autores: Márcio Antônio de Freitas Júnior e Vinícius Scavoni de Lima. Orientador: Professor Doutor Ivan Sendin;</p> </li>
+                    <li> <p>Medalhista da Olimpíada Brasileira de Matemática de Escolas Públicas (OBMEP) nos anos: 2011, 2013 e 2014;</p> </li>
+                </ul>
+            </div>
         
-    </div>
-
-    <div id="formation" class="module p-3" id="formacao-academica">
-        
-        <h2>Formação Acadêmica</h2>
-        <hr>
-        <table class="table table-borderless text-light">
-            <tr>
-                <td>Curso </td> <td>Ciência da Computação</td>
-            </tr>
-            <tr>
-                <td>Instituição </td> <td>Universidade Federal de Uberlândia</td>
-            </tr>
-            <tr>
-                <td>Término </td> <td>Dezembro de 2018</td>
-            </tr>
-        </table>
-    </div>
-
-
-    <div id="qualification" class="module p-3">
-        
-        <h2>Qualificações e Atividades Complementares</h2>
-        <hr>
-        <ul>
-            <li> <p>Inglês Intermediário;</p> </li>
-            <li> <p>Conhecimentos básicos em HTML5, CSS, Bootstrap, JavaScript, AngularJs, Microsoft .NET, MYSQL, Git, Entity framework, JSON, programação funcional e programação lógica;</p> </li>
-            <li> <p>Conhecimentos intermediários em JAVA, C ,Python, programação orientado a objetos e programação procedural.</p> </li>
-            <li> <p>Ferramentas já utilizadas: Redmine, Bitbucket, Github, Visual Studio, Postman;</p> </li>
-            <li> <p>Participação no Programa de Iniciação Científica Júnior com bolsa do CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico) - 2012 e 2014;</p> </li>
-            <li> <p>Publicação de Artigo: Vida Artificial: do Aleatório ao Específico, 2017, 4a edição TechWeek FACOM / UFU. Autores: Márcio Antônio de Freitas Júnior e Vinícius Scavoni de Lima. Orientador: Professor Doutor Ivan Sendin;</p> </li>
-            <li> <p>Medalhista da Olimpíada Brasileira de Matemática de Escolas Públicas (OBMEP) nos anos: 2011, 2013 e 2014;</p> </li>
-        </ul>
-        
-        
-        
+        </div>
     </div>
 
     <footer class="container-fluid text-center">
