@@ -22,38 +22,21 @@
         <script>            
 
             $(document).ready(function(){
+                
+                /*Calculate the age from the bithday*/
+                const age_miliseconds = new Date().getTime() - new Date(1997,09,29).getTime();
+                const age = Math.round(age_miliseconds/31536000000)
+                $("#age").text($("#age").text().replace("?", age))
+
+                /*Show each information*/
                 $(".ctrl-model").click( function(){
                     var opt = $(this);
                     $("opt").removeClass("active");
                     $(".module").fadeOut(400);
                     $("#" + opt.attr("value")).delay(400).fadeIn(500);
-
-                    /*
-                    function(){
-                        var c = 0;
-                        if($(".module").css("display")!="none"){
-                            $(this).fadeOut(300,function(){
-                                $("#" + opt.attr("value")).show();
-                            });
-                        }
-                        else{
-                            c=c+1;
-                        }          
-                        console.log(c);
-                        if(c==4){
-                            $("#" + opt.attr("value")).show();
-                        }
-                        return ;
-                    });
-                    var value = opt.attr("value")
-                    opt.addClass("active");
-                    $(".module").fadeOut(300, function(){
-                        
-                        var aux = opt.attr("value");
-                        console.log(aux);
-                        $("#"+aux).show();
-                    });*/
                 });
+
+                /*Zoom image by clicking*/
                 var img_expanded = false;
                 $("#img-perfil").click(function(){
                     if(img_expanded){
@@ -79,6 +62,7 @@
                     img_expanded = !img_expanded 
                 });
                 
+                /*Navegation bar collapse*/
                 $("#navButton").click(function(){
                     if($("#data-bar").hasClass("show"))
                         $("#navbar-options").addClass("navbar-options");
@@ -131,7 +115,7 @@
        </header>
     
 
-    <div class="background-changer1">
+    <div class="content">
         <div class="background-changer2">
 
         
@@ -139,11 +123,10 @@
             <div id="data" class="module p-3 PersonalData"  style="display: block;">
                 <h1>Dados Pessoais</h1>
                 <p>Márcio Antônio de Freitas Júnior</p>
-                <p>Brasileiro - 20 anos - Solteiro</p>
+                <p id="age">Brasileiro · ? anos</p>
                 <p>Uberlândia · Minas Gerais</p>
-                <p>Rua Euclides Ferreira Tavares - JD Califórnia</p>
                 <p style="white-space:nowrap;text-align: center">
-                    <i style="color: white" class="fa fa-envelope"></i> marcio55afr@gmail.com
+                    <i style="color: white" class="fa fa-envelope"></i> marcio55afr@gmail.com &ensp;
                     <i class="fa fa-phone-square"></i> (34)99862-2909
                 </p>
             </div>
