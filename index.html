@@ -11,67 +11,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="icons/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
-        <link href="assets/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <title>Currículo</title>
         <link rel="shortcut icon" href="images/scroll-paper.png" />
     
-        <script>            
-
-            $(document).ready(function(){
-                
-                /*Calculate the age from the bithday*/
-                const age_miliseconds = new Date().getTime() - new Date(1997,09,29).getTime();
-                const age = Math.round(age_miliseconds/31536000000)
-                $("#age").text($("#age").text().replace("?", age))
-
-                /*Show each information*/
-                $(".ctrl-model").click( function(){
-                    var opt = $(this);
-                    $("opt").removeClass("active");
-                    $(".module").fadeOut(400);
-                    $("#" + opt.attr("value")).delay(400).fadeIn(500);
-                });
-
-                /*Zoom image by clicking*/
-                var img_expanded = false;
-                $("#img-perfil").click(function(){
-                    if(img_expanded){
-                        $(this).animate({
-                            width: '86px',
-                            height: '86px',
-                            borderRadius: '50%'
-                        });
-
-                        $(this).addClass("img-perfil-bigger");
-                        setTimeout(function(){
-                            $("#img-perfil").fadeIn(400).removeClass("img-perfil-bigger");
-                        },400);
-                    }
-                    else{
-                        $(this).animate({
-                            width: '245px',
-                            height: '245px',
-                            borderRadius: '10%'
-                        });
-                        $(this).addClass("img-perfil-bigger");
-                    }
-                    img_expanded = !img_expanded 
-                });
-                
-                /*Navegation bar collapse*/
-                $("#navButton").click(function(){
-                    if($("#data-bar").hasClass("show"))
-                        $("#navbar-options").addClass("navbar-options");
-                    else
-                        $("#navbar-options").removeClass("navbar-options");
-                });
-
-            });
-        </script>
+        <script rel="java script" src="index.js"></script>
 
     </head>
   
@@ -96,18 +43,19 @@
             <div class="collapse navbar-collapse" id="data-bar">
                 <div class="line-div mt-3"></div>
                 <ul id="navbar-options" class="navbar-options navbar-nav cursor-nav">
+                    <li class="ctrl-model nav-item my-auto" value="profile"><a class="nav-link">Perfil</a></li>
                     <li class="ctrl-model nav-item my-auto" value="data"><a class="nav-link">Dados</a></li>
                     <li class="ctrl-model nav-item my-auto" value="experience"><a class="nav-link">Experiência</a></li>
                     <li class="ctrl-model nav-item my-auto" value="formation"><a class="nav-link">Formação</a></li>
-                    <li class="ctrl-model nav-item my-auto" value="qualification"><a class="nav-link">Qualificações</a></li>
+                    <li class="ctrl-model nav-item my-auto" value="qualification"><a class="nav-link">Complementos</a></li>
                 </ul>
                 <div class="line-div mb-3"></div>
             </div>
             <div class="navbar-collapse">
                 <ul class="navbar-links mb-0 px-4 ml-auto">
                     <li class=" my-auto"><a class="nav-link" target="_blank" href="http://lattes.cnpq.br/6598537436915728"><i class="ai ai-lattes"></i></a></li>
-                    <li class="nav-item my-auto"><a class="nav-link" target="_blank" href="https://www.linkedin.com/in/devmarcio/"><i class="fab fa-linkedin"></i></a></li>
-                    <li class="nav-item my-auto"><a class="nav-link" target="_blank" href="https://www.facebook.com/marcio55afr"><i class="fab fa-facebook-square"></i></a></li>
+                    <li class="nav-item my-auto"><a class="nav-link" target="_blank" href="https://www.linkedin.com/in/devmarcio/"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="nav-item my-auto"><a class="nav-link" target="_blank" href="https://github.com/marcio55afr"><i class="fa fa-github"></i></a></li>
                     <li class="nav-item my-auto"><a class="nav-link" href="#">About</a></li>
                 </ul>                        
             </div>
@@ -117,18 +65,42 @@
 
     <div class="content">
         <div class="background-changer2">
+            
+            <div id="profile" class="module p-3 Profile"  style="display: block;">
+                <h3>Cientista de Dados</h3>
+                <h3>Desenvolvedor de Software</h3>
+                <br>
+                <p>Com expertise em:</p>
+                <ul>
+                    <li>
+                        <p><b>Data Science:</b> Python | Machine Learning | SQL | AWS | ETL </p>
+                    </li>
+                    <li>
+                        <p><b>Data Analysis:</b> Pandas | Seaborn | Ipyvizzu  | R </p>
+                    </li>
+                    <li>
+                        <p><b>Backend:</b> .NET Core | Django | SQL | REST | Unit Tests | AWS | Agile </p>
+                    </li>
+                    <li>
+                        <p><b>Frontend:</b> Angular +4 | JavaScript | HTML5 | CSS </p>
+                    </li>
+                </ul>
+            </div>
 
-        
-    
-            <div id="data" class="module p-3 PersonalData"  style="display: block;">
-                <h1>Dados Pessoais</h1>
+
+            <div id="data" class="module p-3 PersonalData">
+                <h2>Dados Pessoais</h2>
                 <p>Márcio Antônio de Freitas Júnior</p>
-                <p id="age">Brasileiro · ? anos</p>
+                <p>Brasileiro</p>
                 <p>Uberlândia · Minas Gerais</p>
-                <p style="white-space:nowrap;text-align: center">
-                    <i style="color: white" class="fa fa-envelope"></i> marcio55afr@gmail.com &ensp;
-                    <i class="fa fa-phone-square"></i> (34)99862-2909
-                </p>
+                <div>
+                    <span>
+                        <i class="fa fa-envelope"></i> marcio55afr@gmail.com
+                    </span>
+                    <span>
+                        <i class="fa fa-phone-square"></i> (34)99861-2909
+                    </span>
+                </div>
             </div>
 
 
@@ -138,53 +110,89 @@
                 <hr>
                 <ul>
                     <li>
-                        <p>2014 - 2015: Martins Comércio e Serviços de Distribuição S/A</p>
-                        <p>Cargo: Aprendiz Profissional Comercial em Serviços Administrativos</p>
-                        <p>Principais Atividades: correção de endereços dos clientes do site eFácil, preenchimento de planilha de entregas, entre outras.</p>
+                        <p>2020-2022: Universidade Federal de Uberlândia</p>
+                        <p>Bolsista CAPES</p>
+                        <p>Dedicação exclusiva</p>
+                        <p>Pesquisa relacionada a Classificação de Séries temporais</p>
+                        <p>Domínio sobre as pesquisas mais recente na área</p>
+                        <p>Identificação de um problema real</p>
+                        <p>Elaboração de uma solução para o problema (Algoritmo 4T)</p>
+                        <p>Implementação ETL para análise e classificação</p>
+                        <p>Elaboração de métricas para avaliação e comparação da solução</p>
                     </li>
                     <li>
-                        <p>2017: Escola de Educação Básica da Universidade Federal de Uberlândia (ESEBA) Cargo: Estagiário – Laboratório de Informática.</p>
-                        <p>Principais Atividades: configuração e manutenção da rede local, suporte técnico à comunidade ESEBA, configuração de computadores, entre outras.</p>
+                        <p>2019-2020: OPUS Software</p>
+                        <p>Desenvolvedor de Software</p>
+                        <p>Implementação de recursos pré-definidos (Backend and Frontend) para aplicações web;</p>
+                        <p>Correção de erros, otimização de código e implementação de testes unitários;</p>
+                        <p>Trabalho desenvolvido com versionamento (BitBucket) e gerenciamento de projetos (Jira);</p>
+                        <p>Trabalho em equipe com metodologia ágil (Scrum);</p>
+                        <p>Estudo e auto-aperfeiçoamento de habilidades com as tecnologias utilizadas.</p>
+                        <p>Criação de extratores para PDF específicos (Python)</p>
                     </li>
                     <li>
                         <p>2018: Cedro Technologies</p>
-                        <p>Cargo: Estagiário em desenvolvimento web backend e front-end</p>
-                        <p>Principais Atividades: Desenvolvimento de API's utilizando a plataforma .NET, desenvolvimento de components e modais em AngularJs e correções de erros e bugs de código.</p>
+                        <p>Estagiário Desenvolvimento de Software</p>
+                        <p>Desenvolvimento de API's utilizando a plataforma .NET;</p>
+                        <p>Desenvolvimento de components e modais em AngularJs;</p>
+                        <p>Correções de erros e bugs de código.</p>
+                    </li>
+                    <li>
+                        <p>2014 - 2015: Martins Comércio e Serviços de Distribuição S/A</p>
+                        <p>Aprendiz Profissional Comercial em Serviços Administrativos</p>
+                        <p>Correção de endereços dos clientes do site eFácil;</p>
+                        <p>Preenchimento de planilha de entregas e de controle.</p>
                     </li>
                 </ul>
                 
             </div>
 
-            <div id="formation" class="module p-3" id="formacao-academica">
-                
+            <div id="formation" class="module p-3 formation" id="formacao-academica">
                 <h2>Formação Acadêmica</h2>
-                <hr>
-                <table class="table table-borderless text-light" style="width:auto; margin: 0 auto;">
-                    <tr>
-                        <td>Curso </td> <td>Ciência da Computação</td>
-                    </tr>
-                    <tr>
-                        <td>Instituição </td> <td>Universidade Federal de Uberlândia</td>
-                    </tr>
-                    <tr>
-                        <td>Término </td> <td>Dezembro de 2018</td>
-                    </tr>
-                </table>
+                <div class="academic-exp">
+                    <ul>
+                        <li>
+                            <p>2019-2022: Universidade Federal de Uberlândia</p>
+                            <p>Mestrado</p>
+                            <p>Ciência da Computação - Data Science</p>
+                        </li>
+                        <li>
+                            <p>2015-2019: Universidade Federal de Uberlândia</p>
+                            <p>Bacharelado</p>
+                            <p>Ciência da Computação</p>
+                        </li>
+                    </ul>
+                </div>
+                <h2>Certificações</h2>
+                <div class="certifications">
+                    <p>AWS Training and Certification</p>
+                    <ul>
+                        <li>AWS Cloud Practitioner Essentials</li>
+                    </ul>
+                    <p>Data Science Academy</p>
+                    <ul>
+                        <li>Big Data Fundamentos 3.0</li>
+                    </ul>
+                    <p>Udemy</p>
+                    <ul>
+                        <li>Data Science: Visualização de Dados com Python</li>
+                        <li>Try Django 2.2 - Web Development with Python 3.6+</li>
+                    </ul>
+                </div>
             </div>
-
-
-            <div id="qualification" class="module p-3">
                 
-                <h2>Qualificações e Atividades Complementares</h2>
+
+            <div id="qualification" class="module p-3 skills">
+                
+                <h2>Atividades Complementares</h2>
                 <hr>
                 <ul>
-                    <li> <p>Inglês Intermediário;</p> </li>
-                    <li> <p>Conhecimentos básicos em HTML5, CSS, Bootstrap, JavaScript, AngularJs, Microsoft .NET, MYSQL, Git, Entity framework, JSON, programação funcional e programação lógica;</p> </li>
-                    <li> <p>Conhecimentos intermediários em JAVA, C ,Python, programação orientado a objetos e programação procedural.</p> </li>
-                    <li> <p>Ferramentas já utilizadas: Redmine, Bitbucket, Github, Visual Studio, Postman;</p> </li>
-                    <li> <p>Participação no Programa de Iniciação Científica Júnior com bolsa do CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico) - 2012 e 2014;</p> </li>
+                    <li> <p>Inglês Avançado;</p> </li>
                     <li> <p>Publicação de Artigo: Vida Artificial: do Aleatório ao Específico, 2017, 4a edição TechWeek FACOM / UFU. Autores: Márcio Antônio de Freitas Júnior e Vinícius Scavoni de Lima. Orientador: Professor Doutor Ivan Sendin;</p> </li>
+                    <li>Monitor da matéria de Cálculo Integral e Diferencial I (2017)</li>
+                    <li> <p>Participação no Programa de Iniciação Científica Júnior com bolsa do CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico) - 2012 e 2014;</p> </li>
                     <li> <p>Medalhista da Olimpíada Brasileira de Matemática de Escolas Públicas (OBMEP) nos anos: 2011, 2013 e 2014;</p> </li>
+                    <li> <p>Domínio das ferramentas: AWS, Redmine, Bitbucket, Github, Visual Studio, Postman, Jira, Latex, Spyder, Anaconda...</p> </li>
                 </ul>
             </div>
         
@@ -192,7 +200,7 @@
     </div>
 
     <footer class="container-fluid text-center">
-        <div>&copy 2018 Márcio A. Freitas Jr. All Rights Reserved</div>
+        <div id="rights">&copy ? Márcio A. Freitas Jr. All Rights Reserved</div>
     </footer>
       
 </body>

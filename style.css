@@ -4,7 +4,6 @@
 	
 	
 	html{
-		min-height: 100%;
 		background-image: url("images/background2.jpeg");
 		background-size: 400px 400px;
 		background-position: center;
@@ -17,10 +16,14 @@
 		background: none;
 		display: flex;
 		flex-flow: column;
-		height: 100%;
 	}
 	body table{
 		padding-left: 40px;
+	}
+	
+	html, body {
+		min-height: 100%;
+		margin: 0;
 	}
 
 	
@@ -38,8 +41,6 @@
 
 	.content{
 		flex: 1 1 auto;
-		width: 100%;
-		height: 100%;
 		background-image: linear-gradient(170deg,rgb(47,79,79,.9),purple 100%);
 		background-color: rgb(27,49,49,.7);
 	}
@@ -53,6 +54,14 @@
 		background-image: linear-gradient(170deg,rgb(47,79,79,.9),black 99%);
 	}
 
+
+	/* tiniest page */
+	header, .content, footer{
+		min-width: 420px;
+	}
+
+
+
 	nav li{
 		display: inline-block;
 		max-width: fit-content !important;
@@ -64,7 +73,6 @@
 	h1,h2{
 		text-align: center !important;
 	}
-
 
 
 	
@@ -110,7 +118,7 @@
 	
 	.background-changer2{
 		width: 100%;
-    	height: 100%;
+    	min-height: 100%;
 		background-color: rgb(27,49,49,.7);
 	}
 
@@ -127,11 +135,83 @@
 	}
 
 
+	/* Lists */
+
+	li p{
+		margin: 0px;
+	}
+	li{
+		margin-bottom: 1em;
+	}
+
+	
+	/*  Resume Content  */
+
+	.profile{
+		min-width: 270px;
+		max-width: 620px;
+	}
+	.profile h3{
+		text-align: center;
+	}
+
+	.PersonalData{
+		min-width: 300px;
+		max-width: 700px;
+	}
+	.PersonalData p, .PersonalData div{
+		text-align: center;
+		margin: 0px;
+	}
+	.PersonalData span{
+		white-space:nowrap;
+		text-align: center;
+		width: 100%;
+	}
+
+	.ProfessionalExp{
+		min-width: 400px;
+		max-width: 700px;
+	}
+	.ProfessionalExp ul li p:nth-child(1) {
+		font-weight: bold;
+	}
+	.ProfessionalExp ul li p:nth-child(2) {
+		font-weight: bold;
+	}
+	
+	.formation{
+		min-width: 290px;
+		max-width: 475px;
+	}
+	.formation h2{
+		margin-bottom: 1.5rem;
+	}
+	.formation div{
+		margin-bottom: 3rem;
+	}
+	.academic-exp ul p:nth-child(2){
+		font-weight: bold;
+	}
+	.certifications {
+    	padding-inline-start: 40px;
+	}
+	.certifications p{
+		font-weight: bold;
+	}
+	.certifications li, .certifications p{
+		margin: 0px;
+	}
+
+	.skills{
+		min-width: 375px;
+		max-width: 700px;
+	}
 
 
 
 
-
+	/* Controls */
 
 	.info{
 		display: flex;
@@ -187,22 +267,12 @@
 		padding: 2% 10% 5% 10%;
 	}
 
-	.PersonalData p{
-		text-align: center;
-		margin: 0px;
-	}
 	.Header{
 		text-align: center;
 		background-color: darkslategray;
 		color: aliceblue;
 		padding: 3%;
 		max-width: 1024px;
-	}
-	.ProfessionalExp ul li p{
-		margin: 0px;
-	}
-	.ProfessionalExp ul li{
-		margin-bottom: 1em;
 	}
 
 	.img_icon{
